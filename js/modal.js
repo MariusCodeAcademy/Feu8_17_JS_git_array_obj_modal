@@ -12,6 +12,7 @@ const els = {
 // event listeners
 els.showBnt.addEventListener('click', showModal);
 els.cancelBnt.addEventListener('click', hideModal);
+els.backdropEl.addEventListener('click', hideModal);
 // functions
 
 // showModal() - nuimti d-none nuo modalo
@@ -26,3 +27,16 @@ function hideModal() {
   els.modalEl.classList.add('d-none');
   els.backdropEl.classList.add('d-none');
 }
+
+function displayInModal(title, subtitle) {
+  // irasyti title i h2
+  els.modalEl.querySelector('h2').textContent = title;
+  // irasyti subtitle i p
+  els.modalEl.querySelector('p').textContent = subtitle;
+  // parodyti modala
+  showModal();
+}
+// displayInModal('Svarbu', 'An apple a day you die anyway');
+// displayInModal('Klaida', 'visi laukai privalomi');
+
+//
