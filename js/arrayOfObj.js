@@ -73,13 +73,17 @@ const people = [
 */
 console.table(people);
 const skArr = [1, 4, 5];
-// 1. Naudojant Array.prototype.forEach atspausdinti visus vyrus.
-people.forEach((personObj) => {
-  // console.log('personObj.sex ===', personObj.sex);
-  // patikrinti ar vyras
-  if (personObj.sex === 'male') {
-    // jei taip spausdinti
-    console.log(personObj);
-  }
-  // jei ne nieko
-});
+
+function printMen() {
+  // 1. Naudojant Array.prototype.forEach atspausdinti visus vyrus.
+  people.forEach((personObj) => {
+    // console.log('personObj.sex ===', personObj.sex);
+    // patikrinti ar vyras
+    if (personObj.sex === 'male') {
+      // jei taip spausdinti
+      console.log(personObj);
+    }
+    // jei ne nieko
+  });
+}
+printMen();
