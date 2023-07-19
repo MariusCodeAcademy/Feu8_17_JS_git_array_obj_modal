@@ -39,4 +39,5 @@ function displayInModal(title, subtitle) {
 // displayInModal('Svarbu', 'An apple a day you die anyway');
 // displayInModal('Klaida', 'visi laukai privalomi');
 
-//
+// <button id="showError">Pranesti apie klaida</button> mygtuko paspaudimu
+// parodyti modal apie klaida, 'Klaida', 'visi laukai privalomi'
