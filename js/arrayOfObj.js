@@ -79,4 +79,13 @@ const skArr = [1, 4, 5];
 
 // const moterys = youngWomen(people);
 
-printDriverGender(people);
+// printDriverGender(people);
+
+// // 5.1 Naudojant Array.prototype.map
+// grazinti naujame masyve visų vairuojančių žmonių lytį.
+
+const driversGendersArr = people
+  .filter((x) => x.hasCar === true)
+  .map((pObj) => pObj.sex);
+
+console.log('driversGendersArr ===', driversGendersArr);
