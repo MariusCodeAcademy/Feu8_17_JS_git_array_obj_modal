@@ -56,3 +56,42 @@ function getStudentsFromYear(kelintoKursoAtrinkti) {
 }
 const kaGrazino = getStudentsFromYear(1);
 console.log('kaGrazino ===', kaGrazino);
+
+// 7. Informatikos fakulteto studentų vidurkius
+
+function getSutentAvgFromFaculty() {
+  // atrinkti tik Informatikos fakulteto studentus
+  const infoFacultyStudents = students.filter(
+    (studObj) => studObj.faculty === 'Informatikos fakultetas'
+  );
+  console.table(infoFacultyStudents);
+  // gauti kiekvieno atrinkto studento vidurkius
+  // const vienoStudVid = infoFacultyStudents[0].modules
+  //   .map(getAvgFromModuleEl)
+  //   .reduce((total, sk, i, arr) => total + sk / arr.length, 0);
+  // console.log('vienoStudVid ===', vienoStudVid);
+  // getSudAvg(infoFacultyStudents[0]);
+  const studAvgArr = infoFacultyStudents.map(getSudAvg);
+  console.log('studAvgArr ===', studAvgArr);
+}
+// debugger;
+getSutentAvgFromFaculty();
+
+// gauti bendra vidurki
+
+// helper fn
+function getAvgFromModuleEl(modEl) {
+  const avg = modEl.marks.reduce(
+    (total, sk, i, arr) => total + sk / arr.length,
+    0
+  );
+  return avg;
+}
+
+function getSudAvg(studObj) {
+  const vienoStudVid = studObj.modules
+    .map(getAvgFromModuleEl)
+    .reduce((total, sk, i, arr) => total + sk / arr.length, 0);
+  console.log('vienoStudVid ===', vienoStudVid);
+  return vienoStudVid;
+}
